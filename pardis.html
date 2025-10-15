@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tappeti d'Eccezione - Il tuo specialista di tappeti di alta gamma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables CSS pour le thème orange */
+        :root {
+            --primary: #FF8C00;
+            --primary-dark: #E67E00;
+            --primary-light: #FFA733;
+            --secondary: #333333;
+            --light: #F9F9F9;
+            --white: #FFFFFF;
+            --text: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contact span {
+            margin-right: 20px;
+        }
+
+        .header-contact i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+
+        .header-social a {
+            margin-left: 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .header-social a:hover {
+            color: var(--primary);
+        }
+
+        .header-main {
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 200px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav a {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .search-container input {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius) 0 0 var(--radius);
+            font-size: 0.9rem;
+            width: 200px;
+        }
+
+        .search-container button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://th.bing.com/th/id/OLC.M40NEpzWqiVz7w480x360?&rs=1&pid=ImgDetMain&o=7&rm=3');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Catégories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        /* Produits */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .product-details {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--light);
+            border-radius: var(--radius);
+        }
+
+        .product-details.active {
+            display: block;
+        }
+
+        .product-details h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .product-details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .product-details li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        /* Services */
+        .services {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        .service-card:hover i,
+        .service-card:hover h3,
+        .service-card:hover p {
+            color: var(--white);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* À propos */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Horaires */
+        .opening-hours {
+            background-color: var(--white);
+        }
+
+        .hours-table {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .hours-row {
+            display: flex;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .hours-time {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hours-closed {
+            color: var(--text-light);
+        }
+
+        /* Carte */
+        .map-section {
+            padding: 0;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: var(--white);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0 0 20px 0;
+            }
+            
+            .header-contact {
+                display: none;
+            }
+            
+            .search-container {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container header-top-content">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> +39 339 472 722 16</span>
+                    
+                </div>
+                <div class="header-social">
+                    <a href="https://www.facebook.com/Pardis.Tappeti.Persiani.Orientali.Lavaggio.Permuta/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-content">
+                <div class="logo">
+                    <img src="Pardis.png" alt="Paradis Logo">
+                </div>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#categories">Categorie</a></li>
+                        <li><a href="#products">Tappeti</a></li>
+                        <li><a href="#about">Chi Siamo</a></li>
+                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#contact">Contatti</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" placeholder="Cerca tappeti...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Tappeti d'eccezione per il tuo interno</h1>
+            <p>Scopri la nostra collezione esclusiva di tappeti artigianali da tutto il mondo. Qualità, eleganza e durata.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Scopri la collezione</a>
+                <a href="#about" class="btn btn-outline">Scopri di più</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catégories -->
+    <section id="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Le Nostre Categorie</h2>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1600166898405-da9535204843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Tappeti Persiani">
+                    </div>
+                    <div class="category-info">
+                        <h3>Tappeti Persiani</h3>
+                        <a href="#" class="btn btn-outline">Scopri di più</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://th.bing.com/th/id/OIP.6XZALktao-X9oVHIuKOcjwHaE6?w=292&h=194&c=7&r=0&o=7&cb=12&pid=1.7&rm=3" alt="Tappeti Iraniani">
+                    </div>
+                    <div class="category-info">
+                        <h3>Tappeti Iraniani</h3>
+                        <a href="#" class="btn btn-outline">Scopri di più</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP._NY7UZ_curyAPhcC5h8PqQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeti Orientali">
+                    </div>
+                    <div class="category-info">
+                        <h3>Tappeti Orientali</h3>
+                        <a href="#" class="btn btn-outline">Scopri di più</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.JJ8TK23wjzBWdqqth_stHwHaJO?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeti Antichi">
+                    </div>
+                    <div class="category-info">
+                        <h3>Tappeti Antichi</h3>
+                        <a href="#" class="btn btn-outline">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produits -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Tappeti</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://tse1.explicit.bing.net/th/id/OIP._wJRFhgl00d-kFG6qBNvQgHaIY?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Persiano Isfahan">
+                        <span class="product-badge">Esclusivo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tappeto Persiano "Isfahan"</h3>
+                        <p>Tappeto persiano di lusso con motivi floreali intricati e colori profondi.</p>
+                        <button class="btn btn-outline scopri-btn">Scopri</button>
+                        <div class="product-details" id="details-1">
+                            <h4>Dettagli del Tappeto Isfahan</h4>
+                            <ul>
+                                <li>Origine: Isfahan, Iran</li>
+                                <li>Materiale: Lana pura e seta</li>
+                                <li>Dimensioni: 200x300 cm</li>
+                                <li>Tecnica: Tessuto a mano con nodo persiano</li>
+                                <li>Età: Nuovo</li>
+                                <li>Colori principali: Rosso bordeaux, blu reale, avorio</li>
+                                <li>Motivo: Medaglione centrale con motivi floreali</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.eSmerjMww2IeN2StH1k-vQHaHX?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Persiano Tabriz">
+                        <span class="product-badge">Vintage</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tappeto Persiano "Tabriz"</h3>
+                        <p>Tappeto persiano classico con disegni geometrici e colori tradizionali.</p>
+                        <button class="btn btn-outline scopri-btn">Scopri</button>
+                        <div class="product-details" id="details-2">
+                            <h4>Dettagli del Tappeto Tabriz</h4>
+                            <ul>
+                                <li>Origine: Tabriz, Iran nord-occidentale</li>
+                                <li>Materiale: Lana pura di alta qualità</li>
+                                <li>Dimensioni: 180x250 cm</li>
+                                <li>Tecnica: Tessuto a mano con nodo turco</li>
+                                <li>Età: 25 anni (vintage)</li>
+                                <li>Colori principali: Beige, blu scuro, rosso terracotta</li>
+                                <li>Motivo: Herati (pesce) con bordo a girali</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP._2w8M8o8fEKLojD7bCwZ8QHaH3?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Persiano Nain">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tappeto Persiano "Nain"</h3>
+                        <p>Tappeto di lusso con disegni finissimi e dettagli in seta.</p>
+                        <button class="btn btn-outline scopri-btn">Scopri</button>
+                        <div class="product-details" id="details-3">
+                            <h4>Dettagli del Tappeto Nain</h4>
+                            <ul>
+                                <li>Origine: Nain, Iran centrale</li>
+                                <li>Materiale: Lana molto fine con dettagli in seta</li>
+                                <li>Dimensioni: 150x210 cm</li>
+                                <li>Tecnica: Tessuto a mano con nodo persiano</li>
+                                <li>Età: Nuovo</li>
+                                <li>Colori principali: Avorio, blu chiaro, verde acqua</li>
+                                <li>Motivo: Shah Abbasi (motivi floreali stilizzati)</li>
+                                <li>Densità nodi: 1.000.000 nodi/m²</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.MpM8KkvdHPRe1nMD1lns_wHaJh?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Persiano Kashan">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tappeto Persiano "Kashan"</h3>
+                        <p>Tappeto tradizionale con medaglione centrale e angoli decorati.</p>
+                        <button class="btn btn-outline scopri-btn">Scopri</button>
+                        <div class="product-details" id="details-4">
+                            <h4>Dettagli del Tappeto Kashan</h4>
+                            <ul>
+                                <li>Origine: Kashan, Iran centrale</li>
+                                <li>Materiale: Lana pura di pecora Kurk</li>
+                                <li>Dimensioni: 170x240 cm</li>
+                                <li>Tecnica: Tessuto a mano con nodo persiano asimmetrico</li>
+                                <li>Età: 15 anni (semi-antico)</li>
+                                <li>Colori principali: Rosso profondo, blu navy, crema</li>
+                                <li>Motivo: Medaglione centrale con motivi a vaso</li>
+                                <li>Spessore: 12 mm (pelo medio)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Servizi</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Consulenza Su Misura</h3>
+                    <p>I nostri esperti ti accompagnano nella scelta del tappeto perfetto per il tuo interno.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Visita a Domicilio</h3>
+                    <p>Veniamo a casa tua per consigliarti il tappeto più adatto al tuo spazio.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-undo-alt"></i>
+                    </div>
+                    <h3>Assistenza Post-Vendita</h3>
+                    <p>Ti seguiamo anche dopo l'acquisto con consigli per la manutenzione.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Pulizia Professionale</h3>
+                    <p>Servizio professionale di pulizia e manutenzione per i tuoi tappeti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="Pardis.png" alt="Il nostro negozio">
+                </div>
+                <div class="about-text">
+                    <h2>La Nostra Storia</h2>
+                    <p>Fondata nel 1995, Tappeti d'Eccezione è nata dalla passione per i tappeti artigianali e dal desiderio di condividere questa arte ancestrale con il maggior numero di persone.</p>
+                    <p>Specializzati in tappeti persiani e iraniani di alta qualità, lavoriamo direttamente con artigiani di queste regioni per offrirvi pezzi unici, che uniscono tradizione e modernità.</p>
+                    <p>Il nostro team di esperti seleziona rigorosamente ogni tappeto per garantirvi autenticità, qualità e durata nel tempo.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Più di 25 anni di esperienza</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Oltre 5000 clienti soddisfatti</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tappeti autentici direttamente dall'Iran</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horaires -->
+    <section class="opening-hours">
+        <div class="container">
+            <div class="section-title">
+                <h2>Orari di Apertura</h2>
+            </div>
+            <div class="hours-table">
+                <div class="hours-row">
+                    <div class="hours-day">Lunedì</div>
+                    <div class="hours-time">10:00 - 13:00 e 16:00 - 20:00</div>
+                </div>
+                <div class="hours-row">
+                    <div class="hours-day">Martedì</div>
+                    <div class="hours-time">10:00 - 13:00 e 16:00 - 20:00</div>
+                </div>
+                <div class="hours-row">
+                    <div class="hours-day">Mercoledì</div>
+                    <div class="hours-time">10:00 - 13:00 e 16:00 - 20:00</div>
+                </div>
+                <div class="hours-row">
+                    <div class="hours-day">Giovedì</div>
+                    <div class="hours-time">10:00 - 13:00 e 16:00 - 20:00</div>
+                </div>
+                <div class="hours-row">
+                    <div class="hours-day">Venerdì</div>
+                    <div class="hours-time">10:00 - 13:00 e 16:00 - 20:00</div>
+                </div>
+                <div class="hours-row">
+                    <div class="hours-day">Sabato</div>
+                    <div class="hours-time">10:00 - 13:00 e 16:00 - 20:00</div>
+                </div>
+                <div class="hours-row">
+                    <div class="hours-day">Domenica</div>
+                    <div class="hours-time hours-closed">Chiuso</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.232154416786!2d13.20925997659728!3d43.7108033472931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132cff6c5c8b9c3d%3A0x8b9c1e0b9c1e0b9c!2sVia%20Raffaello%20Sanzio%2C%20369%2C%2060019%20Senigallia%20AN!5e0!3m2!1sit!2sit!4v1690381234567!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tappeti d'Eccezione</h3>
+                    <p>Il tuo specialista di tappeti persiani e iraniani di alta gamma dal 1995. Autenticità, qualità e servizio personalizzato.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/Pardis.Tappeti.Persiani.Orientali.Lavaggio.Permuta/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Rapidi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#categories">Categorie</a></li>
+                        <li><a href="#products">Tappeti</a></li>
+                        <li><a href="#about">Chi Siamo</a></li>
+                        <li><a href="#services">Servizi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informazioni</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Consulenza</a></li>
+                        <li><a href="#">Manutenzione</a></li>
+                        <li><a href="#">Garanzia</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contatti</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Via Raffaello Sanzio, 369<br>60019 Senigallia AN, Italia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+39 339 472 722 16</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@tappetieccellenza.it</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Sab: 10:00-13:00 e 16:00-20:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tappeti d'Eccezione. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Animation au scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fonctionnalité "Scopri" pour afficher les détails
+        const scopriButtons = document.querySelectorAll('.scopri-btn');
+        
+        scopriButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const details = this.nextElementSibling;
+                const isActive = details.classList.contains('active');
+                
+                // Fermer tous les détails
+                document.querySelectorAll('.product-details').forEach(detail => {
+                    detail.classList.remove('active');
+                });
+                
+                // Ouvrir les détails actuels s'ils n'étaient pas déjà ouverts
+                if (!isActive) {
+                    details.classList.add('active');
+                }
+            });
+        });
+
+        // Fonctionnalité de recherche
+        const searchInput = document.querySelector('.search-container input');
+        const searchButton = document.querySelector('.search-container button');
+        
+        searchButton.addEventListener('click', function() {
+            performSearch();
+        });
+        
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm.trim() !== '') {
+                alert(`Hai cercato: "${searchTerm}". Questa è una demo, la funzionalità di ricerca completa sarà implementata nel sito finale.`);
+                searchInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
