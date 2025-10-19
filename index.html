@@ -61,6 +61,21 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+        .loader {
+      border: 6px solid #ddd;
+      border-top: 6px solid #888;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
 
         .btn:hover {
             background-color: var(--primary-dark);
@@ -708,6 +723,11 @@
     </style>
 </head>
 <body>
+    <div class="loader-container">
+    <div class="loader"></div>
+    <div class="text">Caricamento in corso...</div>
+  </div>
+
     <!-- Header -->
     <header>
         <div class="header-top">
@@ -1171,3 +1191,4 @@
     </script>
 </body>
 </html>
+
