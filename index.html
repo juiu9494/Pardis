@@ -61,7 +61,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .loader {
+         .loader-container {
+      text-align: center;
+    }
+
+    .loader {
       border: 6px solid #ddd;
       border-top: 6px solid #888;
       border-radius: 50%;
@@ -74,6 +78,11 @@
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
+    }
+
+    .text {
+      font-size: 1.2em;
+      color: #555;
     }
 
 
@@ -1191,4 +1200,5 @@
     </script>
 </body>
 </html>
+
 
